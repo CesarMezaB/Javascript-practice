@@ -1,22 +1,28 @@
 const productsArray = [ 
 {
-  product: 'simple burger',
-  price:20
+  name: 'simple burger',
+  price: 20,
+  code: 'S100'
 },
 {
-  product:'double burger',
-  price:15  
+  name:'double burger',
+  price: 15,
+  code: 'D200'  
 },
 {
-  product:'potato chips',
-  price:10  
+  name:'potato chips',
+  price: 10,
+  code: 'P300'  
 },
 {
-  product:'soda',
-  price:5 
+  name:'soda',
+  price: 5,
+  code: 'A400' 
 },
 ];
 
 const showMenu = () => { 
+    console.log('Code - Product - Price')
+    productsArray.forEach(product => console.log(`${product.code} - ${product.name} - $${product.price}`))
 }
    
