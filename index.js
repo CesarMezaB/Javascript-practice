@@ -5,6 +5,7 @@ const user = {
 };
 
 const order = [];
+let orderPrice = 0;
 
 const showMenu = () => { 
     console.log('Code - Product - Price');
@@ -26,3 +27,13 @@ const orderProduct = (cod) =>{
 }
 
 const seeOrder = () => order
+
+const calculatePrice = () =>{
+    let price = 0
+    for (product of order){
+        price += product.price
+    }
+    orderPrice = price
+
+    return orderPrice
+}
