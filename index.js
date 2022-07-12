@@ -46,3 +46,16 @@ const finalizeOrder = () =>{
     
     return `${user.name}, must pay ${user.debt} dollars`
 }
+
+const payOrder = (amountDelivered) => {
+    if (amountDelivered < user.debt){
+        return `you do not have enough to pay for your order`
+    }else if (amountDelivered === user.debt){
+        user.debt = 0
+        return 'your order has been paid'
+    }else{
+        let amount = amountDelivered - user.debt 
+        user.debt = 0
+        return `your order has been paid and your change is ${amount}`
+    }
+}
