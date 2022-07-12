@@ -4,7 +4,7 @@ const user = {
     debt: 0,
 };
 
-const order = [];
+let order = [];
 let orderPrice = 0;
 
 const showMenu = () => { 
@@ -34,6 +34,15 @@ const calculatePrice = () =>{
         price += product.price
     }
     orderPrice = price
-
     return orderPrice
+}
+
+const finalizeOrder = () =>{
+    calculatePrice()
+    user.debt = orderPrice
+
+    order = []
+    orderPrice = 0
+    
+    return `${user.name}, must pay ${user.debt} dollars`
 }
