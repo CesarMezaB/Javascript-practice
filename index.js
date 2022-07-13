@@ -48,6 +48,8 @@ const finalizeOrder = () =>{
 }
 
 const payOrder = (amountDelivered) => {
+    if (!(typeof amountDelivered === "number")) return 'value is not a number';
+
     if (amountDelivered < user.debt){
         return `you do not have enough to pay for your order`
     }else if (amountDelivered === user.debt){
